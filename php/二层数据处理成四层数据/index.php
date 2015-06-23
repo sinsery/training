@@ -1,6 +1,6 @@
 <?php
 /*
-未处理的二维数据
+未处理的二层数据
 Array
 (
     [0] => Array
@@ -406,7 +406,7 @@ public function handleSearchResultData($searchResultData=array())
             foreach ($tutorSubjectValue['data'] as $tutorDataKey => $tutorDataValue) {
                 $tutorArr[$tutorDataValue['branch_id']][] = $tutorDataValue;
             }
-            /* 把按字段分完的数组重新按顺序拼合到新数组 到这里实现的功能类似于 order by branch_id */
+            /* 把按字段分完的数组重新按顺序拼合到新数组 到这里实现的功能类似于 group by branch_id */
             $tutorResultArr = array();
             foreach ($tutorArr as $row) {
                 $tutorResultArr[] = $row;
