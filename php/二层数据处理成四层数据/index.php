@@ -411,10 +411,12 @@ public function handleSearchResultData($searchResultData=array())
             foreach ($tutorArr as $row) {
                 $tutorResultArr[] = $row;
             }
-            $tutorSubjectValue['data'] = $tutorResultArr;
+
+			/* 把新数据赋值回总数组 */
+			$searchResultData[$searchResultDataKey]['tutor_subject'][$tutorSubjectKey]['data'] = $tutorResultArr;
         }
-        /* 把新数据赋值回总数组 */
-        $searchResultData[$searchResultDataKey]['tutor_subject'][$tutorSubjectKey]=$tutorSubjectValue;
+        
+        
     }
 
     return $searchResultData;
